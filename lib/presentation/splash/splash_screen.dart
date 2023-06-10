@@ -1,8 +1,10 @@
 import 'package:employee_app/application/core/constants/app_colors.dart';
+import 'package:employee_app/application/core/constants/app_images.dart';
 import 'package:employee_app/application/employee/employee_bloc.dart';
 import 'package:employee_app/presentation/employee/employee_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -15,13 +17,13 @@ class SplashScreen extends StatelessWidget {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (ctx) => const EmployeeScreen()));
     });
-    return const Scaffold(
+    return Scaffold(
+        backgroundColor: AppColors.white,
         body: Center(
-      child: Icon(
-        Icons.person,
-        color: AppColors.primaryColor,
-        size: 100,
-      ),
-    ));
+          child: Image.asset(
+            AppImages.launcherIcon,
+            height: 180,
+          ),
+        ));
   }
 }

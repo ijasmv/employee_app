@@ -9,4 +9,5 @@ class AppImages {
   static const String icArrow = "$_iconsPath/ic_arrow.svg";
   static const String icPrev = "$_iconsPath/ic_prev.svg";
   static const String icNext = "$_iconsPath/ic_next.svg";
+  static const String launcherIcon = "$_iconsPath/launcher_icon.png";
 }

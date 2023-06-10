@@ -23,7 +23,6 @@ dependencies:
   json_serializable: ^6.6.1
   path_provider: ^2.0.15
   sqflite: ^2.2.8+4
-  flutter_date_pickers: ^0.4.2
   syncfusion_flutter_datepicker: ^19.4.50
 
 dev_dependencies:

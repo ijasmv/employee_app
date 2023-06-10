@@ -72,23 +72,23 @@ class EmployeeBloc extends Bloc<EmployeeEvent, EmployeeState> {
     // Get All Employees
     on<GetEmployees>((event, emit) async {
       final response = await _iEmployeeRepo.getAll();
-      if (response.isNotEmpty) {
-        List<EmployeeData> cEmp = [];
-        List<EmployeeData> pEmp = [];
-        for (var emp in response) {
-          if (emp.toDate.isNotEmpty) {
-            pEmp.add(emp);
-          } else {
-            cEmp.add(emp);
-          }
+      // if (response.isNotEmpty) {
+      List<EmployeeData> cEmp = [];
+      List<EmployeeData> pEmp = [];
+      for (var emp in response) {
+        if (emp.toDate.isNotEmpty) {
+          pEmp.add(emp);
+        } else {
+          cEmp.add(emp);
         }
-        var newState = state.copyWith(
-          currentEmployees: cEmp,
-          previousEmployees: pEmp,
-          status: const EmployeeStatus.fetched(),
-        );
-        emit(newState);
       }
+      var newState = state.copyWith(
+        currentEmployees: cEmp,
+        previousEmployees: pEmp,
+        status: const EmployeeStatus.fetched(),
+      );
+      emit(newState);
+      // }
     });
   }
 }
